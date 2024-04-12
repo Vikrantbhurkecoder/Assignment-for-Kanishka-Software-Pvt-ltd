@@ -1,0 +1,18 @@
+
+.nav{
+    height: 60px;
+    background-color: #3F51B5;
+}
+
+*{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.filter{
+    width: 30%;
+    margin-left: 70px;
+}
+  .header{
+    color: white;
+  }

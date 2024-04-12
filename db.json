@@ -1,0 +1,9 @@
+
+ {
+  "noofpolicies":[
+    {"Total_GPA":0,"Total_AMC":9,"Total_no_of_Policies":166,"Total_Base":88,"Total_DRG":12,"Total_Others":0,"Total_WSA":0,"Total_OPD":20,"Total_ADD_ON":0,"Total_GTL":9,"Total_TopUp":28}
+  ],
+  "piadata":[{"totalActiveDependents":64574,"totalActiveEmployee":435606,"totalActiveLives":500180}],
+  "body":[{"PaidClaims":93,"RejectedClaims":483,"Pending":5516,"TotalActiveClaim":6092}]
+}
+

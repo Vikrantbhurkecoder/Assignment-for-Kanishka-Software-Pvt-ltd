@@ -1,0 +1,110 @@
+<div class="row p-2 text-center">
+  <h3 class="title" *ngIf="!data">Add new Employee</h3>
+  <h3 class="title" *ngIf="data">Update Employee</h3>
+</div>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div class="row mt-4 mx-3 justify-content-center">
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput placeholder="First Name" formControlName="firstName">
+        <mat-error *ngIf="employeeForm.get('firstName').invalid && (employeeForm.get('firstName').dirty || employeeForm.get('firstName').touched)">
+          First Name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+        <mat-error *ngIf="employeeForm.get('lastName').invalid && (employeeForm.get('lastName').dirty || employeeForm.get('lastName').touched)">
+          Last Name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+  </div>
+  <div class="row mt-4 mx-3 justify-content-center">
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="employeeForm.get('email').invalid && (employeeForm.get('email').dirty || employeeForm.get('email').touched)">
+          Email is invalid
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput placeholder="Date of Birth" [matDatepicker]="dobPicker" formControlName="dob">
+        <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+        <mat-datepicker #dobPicker></mat-datepicker>
+        <mat-error *ngIf="employeeForm.get('dob').invalid && (employeeForm.get('dob').dirty || employeeForm.get('dob').touched)">
+          Date of Birth is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row mx-3">
+    <span>Gender: </span>
+    <mat-radio-group formControlName="gender">
+      <mat-radio-button color="primary" value="male">Male</mat-radio-button>
+      <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+      <mat-radio-button color="primary" value="others">Others</mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="employeeForm.get('gender').invalid && (employeeForm.get('gender').dirty || employeeForm.get('gender').touched)">
+      Gender is required
+    </mat-error>
+  </div>
+  <div class="row mt-4 mx-3 justify-content-center">
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <mat-label>Education</mat-label>
+        <mat-select formControlName="education">
+          <mat-option value="matric">Matric</mat-option>
+          <mat-option value="diploma">Diploma</mat-option>
+          <mat-option value="intermediate">Intermediate</mat-option>
+          <mat-option value="graduate">Graduate</mat-option>
+          <mat-option value="post-graduate">Post Graduate</mat-option>
+        </mat-select>
+        <mat-error *ngIf="employeeForm.get('education').invalid && (employeeForm.get('education').dirty || employeeForm.get('education').touched)">
+          Education is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput type="text" placeholder="Company" formControlName="company">
+        <mat-error *ngIf="employeeForm.get('company').invalid && (employeeForm.get('company').dirty || employeeForm.get('company').touched)">
+          Company is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row mt-4 mx-3 justify-content-center">
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput type="number" placeholder="Experience" formControlName="experience">
+        <mat-error *ngIf="employeeForm.get('experience').invalid && (employeeForm.get('experience').dirty || employeeForm.get('experience').touched)">
+          Experience is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="mat-field">
+        <input matInput type="text" placeholder="Package" formControlName="package">
+        <mat-error *ngIf="employeeForm.get('package').invalid && (employeeForm.get('package').dirty || employeeForm.get('package').touched)">
+          Package is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row mt-2 mx-3 p-3">
+    <div class="col-2">
+      <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+    </div>
+    <div class="col-2">
+      <button mat-raised-button color="primary"  *ngIf="!data" type="submit">Save</button>
+      <button mat-raised-button color="primary"  *ngIf="data" type="button" (click)="onUpdate()">Update</button>
+    </div>
+  </div>
+</form>

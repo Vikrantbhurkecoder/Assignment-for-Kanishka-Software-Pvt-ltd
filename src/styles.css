@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #000A65; }
+
+
+
+
+.multiselect-dropdown .dropdown-btn {
+  display: inline-block;
+  border: 1px solid blue;
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border-radius: 4px;
+}
